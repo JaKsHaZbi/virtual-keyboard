@@ -46,12 +46,12 @@ function render() {
   const keyboard = document.createElement('section');
   keyboard.className = 'keyboard container';
 
-  for (let i = 1; i <= 5; i + 1) {
+  for (let i = 1; i <= 5; i += 1) {
     const row = document.createElement('div');
     row.className = `row-${i}`;
 
     if (i === 1) {
-      for (let j = 1; j <= 14; j + 1) {
+      for (let j = 1; j <= 14; j += 1) {
         const btn = document.createElement('div');
         btn.className = 'btn';
         if (j === 1) {
@@ -66,7 +66,7 @@ function render() {
     }
 
     if (i === 2) {
-      for (let j = 1; j <= 15; j + 1) {
+      for (let j = 1; j <= 15; j += 1) {
         const btn = document.createElement('div');
         btn.className = 'btn';
         if (j === 1) {
@@ -81,7 +81,7 @@ function render() {
     }
 
     if (i === 3) {
-      for (let j = 1; j <= 13; j + 1) {
+      for (let j = 1; j <= 13; j += 1) {
         const btn = document.createElement('div');
         btn.className = 'btn';
         if (j === 1 || j === 13) {
@@ -93,7 +93,7 @@ function render() {
     }
 
     if (i === 4) {
-      for (let j = 1; j <= 14; j + 1) {
+      for (let j = 1; j <= 14; j += 1) {
         const btn = document.createElement('div');
         btn.className = 'btn';
         if (j === 1) {
@@ -108,7 +108,7 @@ function render() {
     }
 
     if (i === 5) {
-      for (let j = 1; j <= 9; j + 1) {
+      for (let j = 1; j <= 9; j += 1) {
         const btn = document.createElement('div');
         btn.className = 'btn dark';
         if (j === 1 || j === 6) {
