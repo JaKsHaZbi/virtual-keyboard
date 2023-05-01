@@ -12,6 +12,7 @@ function render() {
 
   const infoFirstP = document.createElement('p');
   infoFirstP.innerHTML = 'Начните печатать или выберите область ввода';
+  // infoFirstP.innerHTML = 'Если есть возможность проверьте работу ближе к концу ревью, спасибо';
 
   const infoFirstLink = document.createElement('a');
   infoFirstLink.href = 'https://github.com/JaKsHaZbi/virtual-keyboard/pull/1';
@@ -21,7 +22,6 @@ function render() {
   textArea.id = 'input';
   textArea.rows = 4;
   textArea.cols = 50;
-  textArea.innerHTML = 'Если есть возможность pls проверьте работу ближе к концу ревью, спасибо';
 
   const infoLast = document.createElement('div');
   infoLast.className = 'info-last';
@@ -45,12 +45,12 @@ function render() {
   const keyboard = document.createElement('section');
   keyboard.className = 'keyboard container';
 
-  for (let i = 1; i <= 5; i + 1) {
+  for (let i = 1; i <= 5; i += 1) {
     const row = document.createElement('div');
     row.className = `row-${i}`;
 
     if (i === 1) {
-      for (let j = 1; j <= 14; j + 1) {
+      for (let j = 1; j <= 14; j += 1) {
         const btn = document.createElement('div');
         btn.className = 'btn';
         if (j === 1) {
@@ -65,7 +65,7 @@ function render() {
     }
 
     if (i === 2) {
-      for (let j = 1; j <= 15; j + 1) {
+      for (let j = 1; j <= 15; j += 1) {
         const btn = document.createElement('div');
         btn.className = 'btn';
         if (j === 1) {
@@ -80,7 +80,7 @@ function render() {
     }
 
     if (i === 3) {
-      for (let j = 1; j <= 13; j + 1) {
+      for (let j = 1; j <= 13; j += 1) {
         const btn = document.createElement('div');
         btn.className = 'btn';
         if (j === 1 || j === 13) {
@@ -92,7 +92,7 @@ function render() {
     }
 
     if (i === 4) {
-      for (let j = 1; j <= 14; j + 1) {
+      for (let j = 1; j <= 14; j += 1) {
         const btn = document.createElement('div');
         btn.className = 'btn';
         if (j === 1) {
@@ -107,7 +107,7 @@ function render() {
     }
 
     if (i === 5) {
-      for (let j = 1; j <= 9; j + 1) {
+      for (let j = 1; j <= 9; j += 1) {
         const btn = document.createElement('div');
         btn.className = 'btn dark';
         if (j === 1 || j === 6) {
