@@ -10,5 +10,11 @@ module.exports = {
     },
     "rules": {
         'no-console': 'off',
-    }
+    },
+    "import/extensions": [
+        "error",
+        {
+            "js": "ignorePackages"
+        }
+    ]
   }

@@ -67,7 +67,8 @@ html {
 .keyboard {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--index) * 0.3);
+    align-items: center;
+    gap: min(calc(var(--index) * 0.3), 7px);
     .row-1,
     .row-2,
     .row-3,
@@ -76,8 +77,15 @@ html {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: calc(var(--index) * 0.4);
+        gap: min(calc(var(--index) * 0.4), 10px);
         height: 40px;
+        width: 80%;
+
+        transition: width 0.5s ease-in-out;
+
+        @media (max-width: 1000px) {
+          width: 100%;
+        }
 
         // background-color: pink;
     }
