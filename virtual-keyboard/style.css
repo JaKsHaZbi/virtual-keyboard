@@ -68,6 +68,42 @@ html {
 .keyboard .row-3,
 .keyboard .row-4,
 .keyboard .row-5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: calc(var(--index) * 0.4);
   height: 40px;
-  background-color: pink;
+}
+.keyboard .btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: calc(var(--index) * 2.6);
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #3a424e;
+  border-radius: 5px;
+}
+.keyboard .dark {
+  color: #696764;
+  background-color: #1c232e;
+}
+.keyboard .middle {
+  width: calc(var(--index) * 3.2);
+}
+.keyboard .large {
+  width: calc(var(--index) * 5);
+}
+.keyboard .row-1 .btn:last-child {
+  width: calc(var(--index) * 6);
+}
+.keyboard .row-3 .btn:first-child,
+.keyboard .row-3 .btn:last-child,
+.keyboard .row-4 .btn:first-child {
+  width: calc(var(--index) * 5.8);
+}
+.keyboard .space {
+  width: calc(var(--index) * 19.7);
 }/*# sourceMappingURL=style.css.map */
