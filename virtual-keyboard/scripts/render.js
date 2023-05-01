@@ -12,7 +12,6 @@ function render() {
 
   const infoFirstP = document.createElement('p');
   infoFirstP.innerHTML = 'Начните печатать или выберите область ввода';
-  // infoFirstP.innerHTML = 'Если есть возможность проверьте работу ближе к концу ревью, спасибо';
 
   const infoFirstLink = document.createElement('a');
   infoFirstLink.href = 'https://github.com/JaKsHaZbi/virtual-keyboard/pull/1';
@@ -22,6 +21,7 @@ function render() {
   textArea.id = 'input';
   textArea.rows = 4;
   textArea.cols = 50;
+  textArea.innerHTML = 'Если есть возможность проверьте работу ближе к концу ревью, спасибо';
 
   const infoLast = document.createElement('div');
   infoLast.className = 'info-last';
