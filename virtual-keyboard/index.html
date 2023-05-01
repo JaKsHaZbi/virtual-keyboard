@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>virtual-keyboard</title>
-</head>
-<body>
-    <h1>virtual-keyboard</h1>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="textarea container">
+        <div class="info-first">
+            <p>Начните печатать или выберите область ввода</p>
+            <a href="https://github.com/JaKsHaZbi/virtual-keyboard/pull/1">Pull Request Link</a>
+        </div>
+        <textarea id="input" rows="4" cols="50"></textarea>
+        <div class="info-last">
+            <p>Клавиатура создана в операционной системе: Windows</p>
+            <p>Переключение языка: левыe клавиши ctrl + alt</p>
+        </div>
+      </section>
+      <section class="keyboard container">
+        <div class="row-1"></div>
+        <div class="row-2"></div>
+        <div class="row-3"></div>
+        <div class="row-4"></div>
+        <div class="row-5"></div>
+      </section>
+    </div>
     <script src="index.js" type="module"></script>
-</body>
+  </body>
 </html>

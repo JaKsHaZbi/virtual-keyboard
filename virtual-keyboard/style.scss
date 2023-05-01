@@ -1,3 +1,81 @@
-body {
-    background-color: pink;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --index: calc(1vw + 1vh);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: calc(var(--index) * 0.2);
+  overflow: hidden;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+
+  background-color: #f1f1f1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--index) * 0.3);
+  margin-top: calc(var(--index) * 0.2);
+  #input {
+    padding: calc(var(--index) * 0.3);
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+}
+
+.textarea,
+.keyboard {
+  // height: 10px;
+  width: 100%;
+  padding: 20px;
+
+  background-color: #a3a3a4;
+  border-radius: 10px;
+}
+
+.info-first,
+.info-last {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--index) * 0.3);
+    .row-1,
+    .row-2,
+    .row-3,
+    .row-4,
+    .row-5 {
+        height: 40px;
+
+        background-color: pink;
+    }
+}
+
