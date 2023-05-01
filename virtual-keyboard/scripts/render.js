@@ -21,7 +21,7 @@ function render() {
   textArea.id = 'input';
   textArea.rows = 4;
   textArea.cols = 50;
-  textArea.innerHTML = 'Если есть возможность проверьте работу ближе к концу ревью, спасибо';
+  textArea.innerHTML = 'Если есть возможность pls проверьте работу ближе к концу ревью, спасибо';
 
   const infoLast = document.createElement('div');
   infoLast.className = 'info-last';
