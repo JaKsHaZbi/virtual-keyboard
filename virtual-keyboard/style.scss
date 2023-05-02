@@ -103,6 +103,11 @@ html {
       background-color: #3a424e;
       // border: 2px solid red;
       border-radius: 5px;
+      transition: background-color 0.25s ease-in-out;
+
+      &:active {
+        background-color: #5571ee;
+      }
     }
 
     .dark {

@@ -1,3 +1,2 @@
 import './scripts/render.js';
-
-console.log('virtual-keyboard');
+import './scripts/keys.js';
