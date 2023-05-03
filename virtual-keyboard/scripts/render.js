@@ -25,7 +25,7 @@ function render() {
   textArea.cols = 50;
   textArea.innerHTML =
     "Если есть возможность проверьте пожалуйста работу ближе к концу ревью, спасибо \n" +
-    "Ивенты пока не отрабатываются";
+    "Ивенты пока не отрабатываются в полном объеме(переключение языка и некоторые функции)";
 
   const infoLast = document.createElement("div");
   infoLast.className = "info-last";

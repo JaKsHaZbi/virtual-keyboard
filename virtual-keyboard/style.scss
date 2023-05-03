@@ -111,7 +111,8 @@ html {
       user-select: none;
       transition: all 0.25s ease-in-out;
 
-      &:active {
+      &:active,
+      &.active  {
         color: #ffffff;
         background-color: #5571ee;
       }

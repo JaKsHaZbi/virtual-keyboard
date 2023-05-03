@@ -110,7 +110,7 @@ html {
           user-select: none;
   transition: all 0.25s ease-in-out;
 }
-.keyboard .btn:active {
+.keyboard .btn:active, .keyboard .btn.active {
   color: #ffffff;
   background-color: #5571ee;
 }
