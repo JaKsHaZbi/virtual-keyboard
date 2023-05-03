@@ -52,6 +52,12 @@ html {
   width: 100%;
   padding: 20px;
 
+  font-size: 16px;
+  @media (max-width: 1000px) {
+    font-size: calc(var(--index) * 0.7);
+  }
+  
+
   background-color: #a3a3a4;
   border-radius: 10px;
 }
@@ -139,6 +145,23 @@ html {
 
     .space {
       width: calc(var(--index) * 19.7);
+    }
+    .btn.center {
+      padding-top: 7px;
+      justify-content: start;
+    }
+    .caps {
+      align-self: flex-end;
+      height: 5px;
+      width: 5px;
+  
+      background-color: grey;
+      border-radius: 50%;
+      transform: translateX(calc(var(--index) * -0.3));
+      transition: background-color 0.2s ease-in-out;
+      &.active {
+        background-color: green;
+      }
     }
 }
 

@@ -44,7 +44,7 @@ function render() {
   textarea.append(infoLast);
   wrapper.append(textarea);
   // wrapper.append(infoFirst);
-  body.append(wrapper);
+  body.prepend(wrapper);
 
   // render keyboard section
   const keyboard = document.createElement("section");
@@ -105,7 +105,15 @@ function render() {
         btn.className = "btn";
         fill(btn, j);
 
-        if (j === 30 || j === 42) {
+        if (j === 30) {
+          btn.className = "caps"
+          const caps = document.createElement('div');
+          caps.className = "caps";
+
+          btn.prepend(caps);
+          btn.className = "btn center large dark"
+        }
+        if (j === 42) {
           btn.className = "btn large dark";
         }
 
@@ -150,9 +158,7 @@ function render() {
   }
   wrapper.append(keyboard);
 }
-
 render();
-
 
 function fill(btn, j) {
   Object.keys(keys).forEach(key => {
