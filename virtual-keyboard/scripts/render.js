@@ -158,14 +158,14 @@ function fill(btn, j) {
   });
 }
 
-function changeStat() {
+export  function changeStat(lang, status) {
   const btnArray = document.querySelectorAll(".btn");
   btnArray.forEach(button => {
     Object.keys(keys).forEach((key) => {
       if ((keys[key].code === button.dataset.code) && !(button.dataset.code === "CapsLock")){
-        button.innerHTML = keys[key]["ru"]["caseDown"];
+        button.innerHTML = keys[key][lang][status];
       }
     });
   });
 }
-changeStat();
+// changeStat("ru", "caseUp");
