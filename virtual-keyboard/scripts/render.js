@@ -24,8 +24,7 @@ function render() {
   textArea.rows = 4;
   textArea.cols = 50;
   textArea.innerHTML =
-    "Если есть возможность проверьте пожалуйста работу ближе к концу ревью, спасибо \n" +
-    "Ивенты пока не отрабатываются в полном объеме(переключение языка и некоторые функции)";
+    "Ивенты пока не отрабатываются в полном объеме(переключение языка и некоторые функции не работают)";
 
   const infoLast = document.createElement("div");
   infoLast.className = "info-last";
@@ -45,6 +44,8 @@ function render() {
   wrapper.append(textarea);
   // wrapper.append(infoFirst);
   body.prepend(wrapper);
+
+  textArea.focus();
 
   // render keyboard section
   const keyboard = document.createElement("section");
