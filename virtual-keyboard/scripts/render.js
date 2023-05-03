@@ -50,12 +50,6 @@ function render() {
   const keyboard = document.createElement("section");
   keyboard.className = "keyboard container";
 
-  // Object.keys(keys).forEach(key => {
-  //   if (keys[key].id === 1) {
-  //     console.log(keys[key]["en"]["caseDown"]);
-  //   }
-  // });
-
   for (let i = 1; i <= 5; i += 1) {
     const row = document.createElement("div");
     row.className = `row-${i}`;
@@ -64,13 +58,8 @@ function render() {
       for (let j = 1; j <= 14; j += 1) {
         const btn = document.createElement("div");
         btn.className = "btn";
-        // Object.keys(keys).forEach(key => {
-        //   if (keys[key].id === j) {
-        //     btn.innerHTML = keys[key]["en"]["caseDown"];
-        //   }
-        // });
         fill(btn, j);
-        
+
         if (j === 1) {
           btn.className = "btn dark";
         }
@@ -106,12 +95,12 @@ function render() {
         fill(btn, j);
 
         if (j === 30) {
-          btn.className = "caps"
-          const caps = document.createElement('div');
+          btn.className = "caps";
+          const caps = document.createElement("div");
           caps.className = "caps";
 
           btn.prepend(caps);
-          btn.className = "btn center large dark"
+          btn.className = "btn center large dark";
         }
         if (j === 42) {
           btn.className = "btn large dark";
@@ -161,9 +150,22 @@ function render() {
 render();
 
 function fill(btn, j) {
-  Object.keys(keys).forEach(key => {
+  Object.keys(keys).forEach((key) => {
     if (keys[key].id === j) {
       btn.innerHTML = keys[key]["en"]["caseDown"];
+      btn.dataset.code = keys[key]["code"];
     }
   });
 }
+
+export  function changeStat(lang, status) {
+  const btnArray = document.querySelectorAll(".btn");
+  btnArray.forEach(button => {
+    Object.keys(keys).forEach((key) => {
+      if ((keys[key].code === button.dataset.code) && !(button.dataset.code === "CapsLock")){
+        button.innerHTML = keys[key][lang][status];
+      }
+    });
+  });
+}
+// changeStat("ru", "caseUp");
