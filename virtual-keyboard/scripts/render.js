@@ -24,7 +24,7 @@ function render() {
   textArea.rows = 4;
   textArea.cols = 50;
   textArea.innerHTML =
-    "Ивенты пока не отрабатываются в полном объеме(нужно разобраться с вводом от вирт кнопок)";
+    "Upd: сейчас доделываю ввод по курсору";
 
   const infoLast = document.createElement("div");
   infoLast.className = "info-last";
