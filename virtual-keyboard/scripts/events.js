@@ -12,7 +12,22 @@ buttonArray.forEach((button) => {
   button.addEventListener("click", () => {
     capsToogle(button);
 
-    textField.value += button.textContent;
+    if (button.dataset.code === "Space") {
+      textField.value += " ";
+    } else
+    if (button.dataset.code === "Tab") {
+      textField.value += "\t";
+    } else 
+    if (button.dataset.code === "Enter") {
+      textField.value += "\n";
+    } else 
+    if ((button.dataset.code === "ShiftLeft") || (button.dataset.code == "ShiftRight")) {
+    } else
+    if ((button.dataset.code === "Backspace")) { 
+      textField.value = textField.slice(0, -1);
+    } else {
+      textField.value += button.textContent;
+    }
   });
 
   button.addEventListener("mousedown", () => {
