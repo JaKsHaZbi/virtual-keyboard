@@ -1,8 +1,8 @@
 import { changeStat } from "./render.js";
 
-let lang = "ru";
+let lang = localStorage.getItem("lang") ? localStorage.getItem("lang") : "en";
 let status = "caseDown";
-changeStat("ru", "caseDown");
+changeStat(lang, status);
 
 const buttonArray = document.querySelectorAll(".btn");
 const CapsLockActive = document.querySelector(".caps");
@@ -82,11 +82,11 @@ function runOnKeys(func, ...codes) {
     () => {
         lang === "ru" ? lang = "en" : lang = "ru";
         changeStat(lang, status);
+        localStorage.setItem('lang', lang)
     },
     "ControlLeft",
     "AltLeft"
   );
-
 
 function capsToogle(button) {
   if (button.dataset.code === "CapsLock") {
