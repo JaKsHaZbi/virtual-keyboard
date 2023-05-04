@@ -36,18 +36,18 @@ window.addEventListener("keydown", (event) => {
     if (event.code === "CapsLock") {
       capsToogle(button);
     }
-    if (button.dataset.code === "ShiftLeft") {
-      changeStat(lang, "shiftCaps");
-    }
   });
+  if (event.code === "ShiftLeft") {
+    changeStat(lang, "shiftCaps");
+  }
 });
 
-window.addEventListener("keyup", (event) =>
+window.addEventListener("keyup", (event) => {
   buttonArray.forEach((button) => {
-    button.classList.remove("active");
-    changeStat(lang, status);
-    // pressed.clear();
+  button.classList.remove("active");
 })  
+    changeStat(lang, status);
+}
 );
 
 function runOnKeys(func, ...codes) {

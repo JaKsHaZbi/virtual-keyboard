@@ -169,4 +169,3 @@ export  function changeStat(lang, status) {
     });
   });
 }
-// changeStat("ru", "caseUp");
