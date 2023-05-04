@@ -9,23 +9,29 @@ const CapsLockActive = document.querySelector(".caps");
 const textField = document.querySelector("#input");
 
 buttonArray.forEach((button) => {
-    button.addEventListener("click", () => {
-        capsToogle(button);
+  button.addEventListener("click", () => {
+    capsToogle(button);
 
-        textField.value += button.textContent;
-    })
+    textField.value += button.textContent;
+  });
 
-    button.addEventListener('mousedown', () => {
-        if ((button.dataset.code === "ShiftLeft") || (button.dataset.code ==="ShiftRight")) {
-            changeStat(lang, "shiftCaps");
-        }
-    })
+  button.addEventListener("mousedown", () => {
+    if (
+      button.dataset.code === "ShiftLeft" ||
+      button.dataset.code === "ShiftRight"
+    ) {
+      changeStat(lang, "shiftCaps");
+    }
+  });
 
-    button.addEventListener('mouseup', () => {
-        if ((button.dataset.code === "ShiftLeft") || (button.dataset.code ==="ShiftRight")) {
-            changeStat(lang, status);
-        }
-    })
+  button.addEventListener("mouseup", () => {
+    if (
+      button.dataset.code === "ShiftLeft" ||
+      button.dataset.code === "ShiftRight"
+    ) {
+      changeStat(lang, status);
+    }
+  });
 });
 
 window.addEventListener("keydown", (event) => {
@@ -44,49 +50,41 @@ window.addEventListener("keydown", (event) => {
 
 window.addEventListener("keyup", (event) => {
   buttonArray.forEach((button) => {
-  button.classList.remove("active");
-})  
-    changeStat(lang, status);
-}
-);
+    button.classList.remove("active");
+  });
+  changeStat(lang, status);
+});
 
 function runOnKeys(func, ...codes) {
-    let pressed = new Set();
+  let pressed = new Set();
 
-    document.addEventListener('keydown', function(event) {
-      pressed.add(event.code);
+  document.addEventListener("keydown", function (event) {
+    pressed.add(event.code);
 
-      for (let code of codes) { // все ли клавиши из набора нажаты?
-        if (!pressed.has(code)) {
-          return;
-        }
+    for (let code of codes) {
+      if (!pressed.has(code)) {
+        return;
       }
+    }
+    pressed.clear();
 
-      // да, все
+    func();
+  });
 
-      // во время показа alert, если посетитель отпустит клавиши - не возникнет keyup
-      // при этом JavaScript "пропустит" факт отпускания клавиш, а pressed[keyCode] останется true
-      // чтобы избежать "залипания" клавиши -- обнуляем статус всех клавиш, пусть нажимает всё заново
-      pressed.clear();
+  document.addEventListener("keyup", function (event) {
+    pressed.delete(event.code);
+  });
+}
 
-      func();
-    });
-
-    document.addEventListener('keyup', function(event) {
-      pressed.delete(event.code);
-    });
-
-  }
-
-  runOnKeys(
-    () => {
-        lang === "ru" ? lang = "en" : lang = "ru";
-        changeStat(lang, status);
-        localStorage.setItem('lang', lang)
-    },
-    "ControlLeft",
-    "AltLeft"
-  );
+runOnKeys(
+  () => {
+    lang === "ru" ? (lang = "en") : (lang = "ru");
+    changeStat(lang, status);
+    localStorage.setItem("lang", lang);
+  },
+  "ControlLeft",
+  "AltLeft"
+);
 
 function capsToogle(button) {
   if (button.dataset.code === "CapsLock") {
