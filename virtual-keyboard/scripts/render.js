@@ -24,7 +24,7 @@ function render() {
   textArea.rows = 4;
   textArea.cols = 50;
   textArea.innerHTML =
-    "Ивенты пока не отрабатываются в полном объеме(переключение языка и некоторые функции не работают)";
+    "Ивенты пока не отрабатываются в полном объеме(переключение языка фиксится, нужно разобраться с водом от вирт кнопок)";
 
   const infoLast = document.createElement("div");
   infoLast.className = "info-last";

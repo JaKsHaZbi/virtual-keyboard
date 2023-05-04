@@ -8,16 +8,25 @@ const buttonArray = document.querySelectorAll(".btn");
 const CapsLockActive = document.querySelector(".caps");
 const textField = document.querySelector("#input");
 
-textField.addEventListener("keydown", () => console.log("test"));
+buttonArray.forEach((button) => {
+    button.addEventListener("click", () => {
+        capsToogle(button);
 
-buttonArray.forEach((button) =>
-  button.addEventListener("click", () => {
-    capsToogle(button);
-    shiftToogle(button);
+        textField.value += button.textContent;
+    })
 
-    textField.value += button.textContent;
-  })
-);
+    button.addEventListener('mousedown', () => {
+        if ((button.dataset.code === "ShiftLeft") || (button.dataset.code ==="ShiftRight")) {
+            changeStat(lang, "shiftCaps");
+        }
+    })
+
+    button.addEventListener('mouseup', () => {
+        if ((button.dataset.code === "ShiftLeft") || (button.dataset.code ==="ShiftRight")) {
+            changeStat(lang, status);
+        }
+    })
+});
 
 window.addEventListener("keydown", (event) => {
   buttonArray.forEach((button) => {
@@ -27,27 +36,29 @@ window.addEventListener("keydown", (event) => {
     if (event.code === "CapsLock") {
       capsToogle(button);
     }
+    if (button.dataset.code === "ShiftLeft") {
+      changeStat(lang, "shiftCaps");
+    }
   });
 });
 
 window.addEventListener("keyup", () =>
-  buttonArray.forEach((button) => button.classList.remove("active"))
+  buttonArray.forEach((button) => {
+    button.classList.remove("active");
+    changeStat(lang, status);
+})  
 );
 
 function capsToogle(button) {
   if (button.dataset.code === "CapsLock") {
     if (CapsLockActive.classList.contains("active")) {
       CapsLockActive.classList.remove("active");
-      changeStat(lang, "caseDown");
+      status = "caseDown";
+      changeStat(lang, status);
     } else {
       CapsLockActive.classList.add("active");
-      changeStat(lang, "caseUp");
+      status = "caseUp";
+      changeStat(lang, status);
     }
   }
-}
-
-function shiftToogle(button) {
-  // if (button.dataset.code === "ShiftLeft") {
-  //     changeStat(lang, "shiftCaps");
-  // }
 }
