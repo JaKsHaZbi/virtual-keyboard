@@ -26,7 +26,9 @@ buttonArray.forEach((button) => {
     if (button.dataset.code === "Backspace") {
       textField.value = textField.value.slice(0, -1);
     } else
-    if ((button.dataset.code === "AltLeft") ||(button.dataset.code === "AltRight")) {
+    if ((button.dataset.code === "AltLeft") ||(button.dataset.code === "AltRight") || (button.dataset.code === "CapsLock") ||
+      (button.dataset.code === "ControlLeft") || (button.dataset.code === "ControlRight") || (button.dataset.code === "Delete") ||
+      (button.dataset.code === "MetaLeft")) {
     } else {
       textField.value += button.textContent;
     }
